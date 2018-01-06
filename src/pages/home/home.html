@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>image to bitmap array</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div >
+    <div>
+      <input type="file" name="myPhoto" (change)="choseImage($event)" />
+    </div>
+    <div *ngIf="imageData">
+      <img [src]="imageData" image />
+    </div>
+
+    <div *ngIf="imageData">
+      <h1>
+        <ion-icon name="ios-arrow-down"></ion-icon>
+      </h1>
+    </div>
+
+    <div>
+      <canvas #myCanvas></canvas>
+    </div>
+    <ion-card *ngIf="result">
+      <ion-card-header>
+        转换结果
+      </ion-card-header>
+      <ion-card-content selectable>
+        <!-- <p>\\{{image.height}}{{image.width}}</p> -->
+        {{result}}
+      </ion-card-content>
+      <ion-item>
+        <button ion-button clear item-start>转换成小端</button>
+        <button ion-button clear item-start>颜色反转</button>
+        <!-- <button ion-button clear item-end>复制</button> -->
+      </ion-item>
+    </ion-card>
+  </div>
+
+</ion-content>
