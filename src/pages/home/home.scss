@@ -1,6 +1,11 @@
 page-home {
     [image] {
+        max-width: 40vh;
         max-height: 30vw;
+    }
+    [result] {
+        max-height: 30vh;
+        max-width: 40vw;
     }
     [selectable] {
         -webkit-user-select: text;
@@ -10,5 +15,14 @@ page-home {
     }
     [imgZone] {
         position: absolute;
+    }
+    [threshold] {
+        width: 30vw;
+    }
+    [color] {
+        width: 10vw;
+    }
+    [endian] {
+        width: 10vw;
     }
 }

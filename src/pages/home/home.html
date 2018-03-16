@@ -5,23 +5,42 @@
 </ion-header>
 
 <ion-content padding>
-  <div >
-    <div>
-      <input type="file" name="myPhoto" (change)="choseImage($event)" />
-    </div>
-    <div *ngIf="imageData">
-      <img [src]="imageData" image />
-    </div>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <input type="file" name="myPhoto" (change)="choseImage($event)" />
+        <div endian class="item-inner">切换大小端
+          <ion-toggle [(ngModel)]="endian" (ngModelChange)="convert($event)"></ion-toggle>
+        </div>
+        <div color class="item-inner">颜色反转
+          <ion-toggle [(ngModel)]="color" (ngModelChange)="convert($event)"></ion-toggle>
+        </div>
+        <div threshold>
+          取色阀值
+          <ion-range min="0" max="255" [(ngModel)]="threshold">
+            <ion-icon small range-left name="sunny"></ion-icon>
+            <ion-icon range-right name="sunny"></ion-icon>
+          </ion-range>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div *ngIf="!imageData">
+          <p>这是一个完全开源的纯前端点阵液晶取模程序</p>
+          <p>源码可见<a href="https://github.com/coloz/image-to-bitmap-array">github</a></p>
+          <p>打个星星支持下，好不好ヾ(≧∇≦*)ゝ</p>
+        </div>
+        <div *ngIf="imageData">
+          <img [src]="imageData" image />
+        </div>
+        <div *ngIf="imageData">
+          <h1> >>> </h1>
+        </div>
+        <div>
+          <canvas width="300" height="300" #myCanvas result></canvas>
+        </div>
+      </ion-row>
+    </ion-grid>
 
-    <div *ngIf="imageData">
-      <h1>
-        <ion-icon name="ios-arrow-down"></ion-icon>
-      </h1>
-    </div>
-
-    <div>
-      <canvas width="300" height="300" #myCanvas></canvas>
-    </div>
     <ion-card *ngIf="result">
       <ion-card-header>
         转换结果
@@ -30,11 +49,6 @@
         <!-- <p>\\{{image.height}}{{image.width}}</p> -->
         {{result}}
       </ion-card-content>
-      <ion-item>
-        <button ion-button clear item-start>转换成小端</button>
-        <button ion-button clear item-start>颜色反转</button>
-        <!-- <button ion-button clear item-end>复制</button> -->
-      </ion-item>
     </ion-card>
   </div>
 

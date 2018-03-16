@@ -1,5 +1,5 @@
 import { Component, ViewChild, Renderer2 } from '@angular/core';
-// import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ConverterProvider } from '../../providers/converter/converter';
 
 @Component({
@@ -11,12 +11,18 @@ export class HomePage {
 
   imageData;
   result: string;
-  endian = 'big';
+  endian = false;
+  // 'big';
+  threshold = 170;
+  color = false;
+  width = 0;
+  height = 0;
+  file;
   fileFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
   @ViewChild("myCanvas") myCanvas;
 
   constructor(
-    // private sanitizer: DomSanitizer,
+    private sanitizer: DomSanitizer,
     private converter: ConverterProvider,
     private renderer: Renderer2,
   ) {
@@ -24,24 +30,31 @@ export class HomePage {
 
   choseImage(event) {
     console.log("chose image");
-    var file = event.currentTarget.files[0];
-    if (!this.fileFilter.test(file.type)) {
+    this.file = event.currentTarget.files[0];
+    if (!this.fileFilter.test(this.file.type)) {
       alert("你上传的不是图片文件");
       return;
     }
-    // this.imageData = this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file));
+    this.imageData = this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(this.file));
+    this.convert(event);
+  }
 
+  convert(event) {
+    console.log("color=" + this.color.toString() + "  endian=" + this.endian.toString());
+    if (typeof (this.file) == "undefined") return;
     let context = this.myCanvas.nativeElement.getContext("2d");
     let image = new Image();
     this.result = 'const unsigned char arduino[] = {';
-    image.src = window.URL.createObjectURL(file);
+    image.src = window.URL.createObjectURL(this.file);
     image.onload = () => {
       this.renderer.setAttribute(this.myCanvas.nativeElement, "width", image.width.toString() + 'px')
       this.renderer.setAttribute(this.myCanvas.nativeElement, "height", image.height.toString() + 'px')
+      context.clearRect(0, 0, this.width, this.height);
       context.drawImage(image, 0, 0);
-      // console.log(context.getImageData(0, 0, image.width, image.height));
       let img = context.getImageData(0, 0, image.width, image.height);
-      this.converter.img2BitmapArray(context, img, { endian: 'big', color: 'inverse' })
+      this.width = image.width;
+      this.height = image.height;
+      this.converter.img2BitmapArray(context, img, { endian: this.endian, color: this.color, threshold: this.threshold })
         .then((result) => {
           this.result += result;
         });
