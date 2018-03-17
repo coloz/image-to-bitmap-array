@@ -18,6 +18,7 @@ export class HomePage {
   width = 0;
   height = 0;
   file;
+  size;
   fileFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
   @ViewChild("myCanvas") myCanvas;
 
@@ -44,9 +45,10 @@ export class HomePage {
     if (typeof (this.file) == "undefined") return;
     let context = this.myCanvas.nativeElement.getContext("2d");
     let image = new Image();
-    this.result = 'const unsigned char arduino[] = {';
     image.src = window.URL.createObjectURL(this.file);
     image.onload = () => {
+      this.size = `//width:${image.width.toString()},height:${image.height.toString()}`
+      this.result = `const unsigned char col[] U8X8_PROGMEM= {`;
       this.renderer.setAttribute(this.myCanvas.nativeElement, "width", image.width.toString() + 'px')
       this.renderer.setAttribute(this.myCanvas.nativeElement, "height", image.height.toString() + 'px')
       context.clearRect(0, 0, this.width, this.height);

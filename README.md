@@ -3,4 +3,4 @@
 
 demo:http://tools.clz.me/  
 
-打个星星支持下，好不好ヾ(≧∇≦*)ゝ  
+有帮助的话，到github打个星星支持下
