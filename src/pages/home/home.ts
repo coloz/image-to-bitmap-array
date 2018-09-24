@@ -40,27 +40,31 @@ export class HomePage {
     this.convert(event);
   }
 
+  timer;
   convert(event) {
-    console.log("color=" + this.color.toString() + "  endian=" + this.endian.toString());
-    if (typeof (this.file) == "undefined") return;
-    let context = this.myCanvas.nativeElement.getContext("2d");
-    let image = new Image();
-    image.src = window.URL.createObjectURL(this.file);
-    image.onload = () => {
-      this.size = `//width:${image.width.toString()},height:${image.height.toString()}`
-      this.result = `const unsigned char col[] U8X8_PROGMEM= {`;
-      this.renderer.setAttribute(this.myCanvas.nativeElement, "width", image.width.toString() + 'px')
-      this.renderer.setAttribute(this.myCanvas.nativeElement, "height", image.height.toString() + 'px')
-      context.clearRect(0, 0, this.width, this.height);
-      context.drawImage(image, 0, 0);
-      let img = context.getImageData(0, 0, image.width, image.height);
-      this.width = image.width;
-      this.height = image.height;
-      this.converter.img2BitmapArray(context, img, { endian: this.endian, color: this.color, threshold: this.threshold })
-        .then((result) => {
-          this.result += result;
-        });
-    }
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      console.log("color=" + this.color.toString() + "  endian=" + this.endian.toString());
+      if (typeof (this.file) == "undefined") return;
+      let context = this.myCanvas.nativeElement.getContext("2d");
+      let image = new Image();
+      image.src = window.URL.createObjectURL(this.file);
+      image.onload = () => {
+        this.size = `//width:${image.width.toString()},height:${image.height.toString()}`
+        this.result = `const unsigned char col[] U8X8_PROGMEM= {`;
+        this.renderer.setAttribute(this.myCanvas.nativeElement, "width", image.width.toString() + 'px')
+        this.renderer.setAttribute(this.myCanvas.nativeElement, "height", image.height.toString() + 'px')
+        context.clearRect(0, 0, this.width, this.height);
+        context.drawImage(image, 0, 0);
+        let img = context.getImageData(0, 0, image.width, image.height);
+        this.width = image.width;
+        this.height = image.height;
+        this.converter.img2BitmapArray(context, img, { endian: this.endian, color: this.color, threshold: this.threshold })
+          .then((result) => {
+            this.result += result;
+          });
+      }
+    }, 500);
   }
 
 }

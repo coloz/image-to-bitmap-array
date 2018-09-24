@@ -22,7 +22,7 @@
           </ion-item>
           <ion-item>
             <ion-label>取色阀值</ion-label>
-            <ion-range min="0" max="255" [(ngModel)]="threshold">
+            <ion-range min="0" max="255" [(ngModel)]="threshold" (ngModelChange)="convert($event)">
               <ion-icon small range-left name="sunny"></ion-icon>
               <ion-icon range-right name="sunny"></ion-icon>
             </ion-range>
@@ -41,6 +41,11 @@
             </p>
             <p>觉得有用的话，可以打个星星支持下</p>
           </div>
+        </ion-col>
+        <ion-col>
+          <a href="https://union-click.jd.com/jdc?d=H6U5sb" target="_blank">
+            <img src="assets/bookad.jpg">
+          </a>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -62,7 +67,7 @@
       </ion-card-header>
       <ion-card-content selectable>
         {{size}}
-        <br/> {{result}}
+        <br /> {{result}}
       </ion-card-content>
     </ion-card>
   </div>
