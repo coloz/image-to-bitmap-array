@@ -4,3 +4,5 @@
 demo:http://tools.clz.me/  
 
 有帮助的话，到github打个星星支持下
+
+使用框架：ionic3+angular5
