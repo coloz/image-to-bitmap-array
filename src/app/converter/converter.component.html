@@ -4,19 +4,19 @@
     <input type="file" name="myPhoto" (change)="choseImage($event)" />
 
     <div>切换大小端</div>
-    <ion-toggle [(ngModel)]="endian" (ngModelChange)="convert($event)"></ion-toggle>
+    <!-- <ion-toggle [(ngModel)]="endian" (ngModelChange)="convert($event)"></ion-toggle> -->
 
     <div>颜色反转</div>
-    <ion-toggle [(ngModel)]="color" (ngModelChange)="convert($event)"></ion-toggle>
+    <!-- <ion-toggle [(ngModel)]="color" (ngModelChange)="convert($event)"></ion-toggle> -->
 
     <div>取色阀值</div>
 
-    <ion-range min="0" max="255" [(ngModel)]="threshold" (ngModelChange)="convert($event)">
+    <!-- <ion-range min="0" max="255" [(ngModel)]="threshold" (ngModelChange)="convert($event)">
         <ion-icon small range-left name="sunny"></ion-icon>
         <ion-icon range-right name="sunny"></ion-icon>
-    </ion-range>
+    </ion-range> -->
 
-    <div offset-1>
+    <div>
         <div>
             <p>这是一个完全开源的纯前端点阵液晶取模程序</p>
             <p>推荐配合Arduino u8g2库显示图像</p>

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConverterComponent } from './converter/converter.component';
+import { ConverterService } from './converter/converter.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { ConverterComponent } from './converter/converter.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ConverterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
