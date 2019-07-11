@@ -1,7 +1,0 @@
-{
-  "name": "image2bitmap",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}

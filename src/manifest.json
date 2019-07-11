@@ -1,8 +1,0 @@
-{
-  "name": "Ionic",
-  "short_name": "Ionic",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
-}

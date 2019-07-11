@@ -1,8 +1,27 @@
-这是一个完全开源的纯前端点阵液晶取模程序  
-可以将图片转换为C数组  
+# Bitmap
 
-demo:http://tools.clz.me/  
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
-有帮助的话，到github打个星星支持下
+## Development server
 
-使用框架：ionic3+angular5
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
