@@ -15,7 +15,7 @@ import { ConverterService } from './converter/converter.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ConverterService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

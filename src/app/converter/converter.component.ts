@@ -5,7 +5,8 @@ import { ConverterService } from './converter.service';
 @Component({
   selector: 'app-converter',
   templateUrl: './converter.component.html',
-  styleUrls: ['./converter.component.scss']
+  styleUrls: ['./converter.component.scss'],
+  providers: [ConverterService]
 })
 export class ConverterComponent implements OnInit {
 
