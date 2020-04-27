@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   result: string;
   endian = false;
 
-  threshold = 170;
+  threshold = 127;
   color = false;
   width = 0;
   height = 0;
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   get content() {
-    return this.size + '\n' + this.result
+    return this.size + this.result
   }
 
   constructor(
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
       let image = new Image();
       image.src = window.URL.createObjectURL(this.file);
       image.onload = () => {
-        this.size = `//width:${image.width.toString()},height:${image.height.toString()}`
+        this.size = `// width: ${image.width.toString()}, height: ${image.height.toString()}\n`
         this.result = `const unsigned char col[] U8X8_PROGMEM= {`;
         this.renderer.setAttribute(this.myCanvas.nativeElement, "width", image.width.toString() + 'px')
         this.renderer.setAttribute(this.myCanvas.nativeElement, "height", image.height.toString() + 'px')

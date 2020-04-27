@@ -13,7 +13,7 @@
         </div>
         <div class="slider-box">
             <div class="label">取色阀值</div>
-            <nz-slider [(ngModel)]="threshold" (ngModelChange)="convert($event)"></nz-slider>
+            <nz-slider [(ngModel)]="threshold" [nzMax]="255" (ngModelChange)="convert($event)"></nz-slider>
         </div>
     </nz-col>
     <nz-col class="padding-left">
@@ -48,7 +48,7 @@
                 <h1> >>> </h1>
             </div>
             <div>
-                <canvas width="300" height="300" #myCanvas result></canvas>
+                <canvas #myCanvas result></canvas>
             </div>
         </div>
     </nz-col>

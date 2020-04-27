@@ -5,10 +5,10 @@
     display: flex;
     align-items: center;
     img {
-        height: 300px;
+        max-height: 300px;
     }
     canvas {
-        height: 300px;
+        max-height: 300px;
     }
 }
 
