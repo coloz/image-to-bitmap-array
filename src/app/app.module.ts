@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { ConverterService } from './services/converter.service';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -19,6 +18,7 @@ import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import zh from '@angular/common/locales/zh';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { HomeComponent } from './pages/home/home.component';
 
 registerLocaleData(zh);
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

@@ -1,0 +1,47 @@
+.img-box {
+    width: 500px;
+    height: 300px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    img {
+        height: 300px;
+    }
+    canvas {
+        height: 300px;
+    }
+}
+
+.code-box {
+    width: 600px;
+}
+
+.padding-left {
+    padding-left: 30px;
+}
+
+.switch-box {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    .label {
+        width: 80px;
+    }
+    nz-switch {
+        margin-left: 15px;
+    }
+}
+
+.slider-box {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    width: 300px;
+    .label {
+        width: 80px;
+    }
+    nz-slider{
+        flex-grow: 1;
+    }
+}
+

@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { ConverterService } from '../services/converter.service';
+import { ConverterService } from '../../services/converter.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -24,8 +24,9 @@ export class HomeComponent implements OnInit {
 
   codemirrorOptions = {
     lineNumbers: true,
-    theme: 'material',
-    mode: 'cpp'
+    theme: '3024-day',
+    mode: 'clike',
+    lineWrapping: true
   }
 
   get content() {

@@ -3,4 +3,9 @@
 /* Importing Bootstrap SCSS file. */
 // @import '~bootstrap/scss/bootstrap';
 @import "~codemirror/lib/codemirror";
-@import "~codemirror/theme/material";
+@import "~codemirror/theme/3024-day";
+
+.CodeMirror {
+    font-family: Arial, monospace;
+    font-size: 16px;
+}
