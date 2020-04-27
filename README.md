@@ -1,27 +1,12 @@
-# Img2bitmap
+# convert image to C bitmap array  
+一个纯前端的图片取模程序
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+## 演示地址  
+http://tools.clz.me/  
 
-## Development server
+## 在线乞讨  
+觉得不错，就请star一下  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 更新  
+2020.4.28  这个小软件意外受欢迎，那我再更新下吧  
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
