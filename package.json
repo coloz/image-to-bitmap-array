@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~9.0.3",
     "@angular/platform-browser-dynamic": "~9.0.3",
     "@angular/router": "~9.0.3",
+    "@ctrl/ngx-codemirror": "^3.0.4",
+    "codemirror": "^5.53.2",
     "ng-zorro-antd": "^9.1.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

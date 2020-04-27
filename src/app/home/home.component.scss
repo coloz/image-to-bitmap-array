@@ -1,0 +1,24 @@
+.slider-box{
+    width: 300px;
+}
+
+.img-box{
+    width: 500px;
+    height: 300px;
+    display: flex;
+    // justify-content: center;
+    img{
+        height: 300px;
+    }
+    canvas{
+        height: 300px;
+    }
+}
+
+.code-box{
+width: 600px;
+}
+
+// .ngx-codemirror {
+    //     width: 600px;
+    // }

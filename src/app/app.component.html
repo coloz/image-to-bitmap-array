@@ -1,10 +1,6 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
     <div class="sidebar-logo">
       <a href="https://clz.me/" target="_blank">
         <img src="https://clz.me/wp-content/uploads/2017/02/logo.png" alt="logo">
@@ -25,17 +21,13 @@
           </li>
         </ul>
       </li>
-
     </ul>
   </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
+          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
         </span>
       </div>
     </nz-header>
@@ -45,4 +37,9 @@
       </div>
     </nz-content>
   </nz-layout>
+  <div class="fixed">
+    <a href="https://union-click.jd.com/jdc?d=H6U5sb" target="_blank">
+      <img src="assets/bookad.jpg">
+    </a>
+  </div>
 </nz-layout>

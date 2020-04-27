@@ -1,4 +1,61 @@
-<div>
+<nz-row>
+    <nz-col>
+        <div>
+            <input type="file" name="myPhoto" (change)="choseImage($event)" />
+        </div>
+        <div>
+            <div>切换大小端</div>
+            <nz-switch [(ngModel)]="endian" (ngModelChange)="convert($event)"></nz-switch>
+        </div>
+        <div>
+            <div>颜色反转</div>
+            <nz-switch [(ngModel)]="color" (ngModelChange)="convert($event)"></nz-switch>
+        </div>
+        <div class="slider-box">
+            <div>取色阀值</div>
+            <nz-slider [(ngModel)]="threshold" (ngModelChange)="convert($event)"></nz-slider>
+        </div>
+    </nz-col>
+    <nz-col>
+        <div>
+            <p>这是一个完全开源的纯前端点阵液晶取模程序</p>
+            <p>推荐配合Arduino u8g2库显示图像</p>
+            <p>如果显示不正常，切换下大小端再试试</p>
+            <p>遇到问题可以
+                <a href="http://www.arduino.cn/thread-42174-1-1.html">在Arduino中文社区提问</a>
+            </p>
+            <p>源码可见
+                <a href="https://github.com/coloz/image-to-bitmap-array">github</a>
+            </p>
+            <p>觉得有用的话，可以打个星星支持下</p>
+        </div>
+    </nz-col>
+</nz-row>
+<nz-row>
+    <nz-col>
+        <div class="img-box">
+            <div *ngIf="imageData">
+                <img [src]="imageData" image />
+            </div>
+            <div *ngIf="imageData">
+                <h1> >>> </h1>
+            </div>
+            <div>
+                <canvas width="300" height="300" #myCanvas result></canvas>
+            </div>
+        </div>
+    </nz-col>
+</nz-row>
+<nz-row>
+    <nz-col *ngIf="result">
+        <div class="code-box">
+            转换结果
+            <ngx-codemirror [ngModel]="content" [options]="codemirrorOptions"></ngx-codemirror>
+        </div>
+    </nz-col>
+</nz-row>
+
+<!-- <div>
     <div>
         <div>
             <div col-xl-2 col-lg-4 col-sm-6 col-md-6>
@@ -7,21 +64,18 @@
                 </div>
                 <div>
                     <div>切换大小端</div>
-                    <!-- <ion-toggle [(ngModel)]="endian" (ngModelChange)="convert($event)"></ion-toggle> -->
+                    <nz-switch [(ngModel)]="endian" (ngModelChange)="convert($event)"></nz-switch>
                 </div>
                 <div>
                     <div>颜色反转</div>
-                    <!-- <ion-toggle [(ngModel)]="color" (ngModelChange)="convert($event)"></ion-toggle> -->
+                    <nz-switch [(ngModel)]="color" (ngModelChange)="convert($event)"></nz-switch>
                 </div>
-                <div>
+                <div class="slider-box">
                     <div>取色阀值</div>
-                    <!-- <ion-range min="0" max="255" [(ngModel)]="threshold" (ngModelChange)="convert($event)">
-                        <ion-icon small range-left name="sunny"></ion-icon>
-                        <ion-icon range-right name="sunny"></ion-icon>
-                    </ion-range> -->
+                    <nz-slider [(ngModel)]="threshold" (ngModelChange)="convert($event)"></nz-slider>
                 </div>
             </div>
-            <div offset-1>
+            <div>
                 <div>
                     <p>这是一个完全开源的纯前端点阵液晶取模程序</p>
                     <p>推荐配合Arduino u8g2库显示图像</p>
@@ -35,32 +89,7 @@
                     <p>觉得有用的话，可以打个星星支持下</p>
                 </div>
             </div>
-            <div>
-                <a href="https://union-click.jd.com/jdc?d=H6U5sb" target="_blank">
-                    <img src="assets/bookad.jpg">
-                </a>
-            </div>
-        </div>
-        <div>
-            <div *ngIf="imageData">
-                <img [src]="imageData" image />
-            </div>
-            <div *ngIf="imageData">
-                <h1> >>> </h1>
-            </div>
-            <div>
-                <canvas width="300" height="300" #myCanvas result></canvas>
-            </div>
         </div>
     </div>
 
-    <div *ngIf="result">
-        <div>
-            转换结果
-        </div>
-        <div selectable>
-            {{size}}
-            <br /> {{result}}
-        </div>
-    </div>
-</div>
+</div> -->

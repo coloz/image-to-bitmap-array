@@ -14,7 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 import zh from '@angular/common/locales/zh';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 registerLocaleData(zh);
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,11 +32,15 @@ registerLocaleData(zh);
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
+    NzSwitchModule,
     NzLayoutModule,
     NzMenuModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NzSliderModule,
+    NzGridModule,
+    CodemirrorModule
     // NgbModule
   ],
   providers: [ConverterService, { provide: NZ_I18N, useValue: zh_CN }],
