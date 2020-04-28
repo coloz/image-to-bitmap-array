@@ -1,19 +1,23 @@
 <nz-row>
-    <nz-col>
+    <nz-col class="min-col">
         <div>
             <input type="file" name="myPhoto" (change)="choseImage($event)" />
         </div>
         <div class="switch-box">
             <div class="label">切换大小端</div>
-            <nz-switch [(ngModel)]="endian" (ngModelChange)="convert($event)"></nz-switch>
+            <nz-switch [(ngModel)]="options.endian" (ngModelChange)="convert($event)"></nz-switch>
         </div>
         <div class="switch-box">
             <div class="label">颜色反转</div>
-            <nz-switch [(ngModel)]="color" (ngModelChange)="convert($event)"></nz-switch>
+            <nz-switch [(ngModel)]="options.invert" (ngModelChange)="convert($event)"></nz-switch>
         </div>
-        <div class="slider-box">
+        <div class="switch-box">
+            <div class="label">使能抖动</div>
+            <nz-switch [(ngModel)]="options.dither" (ngModelChange)="convert($event)"></nz-switch>
+        </div>
+        <div class="slider-box" *ngIf="!options.dither">
             <div class="label">取色阀值</div>
-            <nz-slider [(ngModel)]="threshold" [nzMax]="255" (ngModelChange)="convert($event)"></nz-slider>
+            <nz-slider [(ngModel)]="options.threshold" [nzMax]="255" (ngModelChange)="convert($event)"></nz-slider>
         </div>
     </nz-col>
     <nz-col class="padding-left">
