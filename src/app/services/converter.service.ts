@@ -22,11 +22,9 @@ export class ConverterService {
       if (this.options.invert) {
         this.invertColor()
       }
-      // resolve(this.getBitmapArray())
-      let result = this.getBitmapArray()
-      console.log(result);
-
-      return result
+      resolve(this.getBitmapArray())
+      // return this.getBitmapArray()
+      // return result
     })
   }
 

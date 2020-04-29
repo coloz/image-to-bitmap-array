@@ -81,12 +81,9 @@ export class HomeComponent implements OnInit {
         this.width = image.width;
         this.height = image.height;
 
-        this.converterService.convert(context, imageData, this.options)
-
-        // this.converter.img2BitmapArray(context, img, this.options)
-        //   .then((result) => {
-        //     this.result += result;
-        //   });
+        this.converterService.convert(context, imageData, this.options).then((result) => {
+          this.result += result;
+        });
       }
     }, 500);
   }
