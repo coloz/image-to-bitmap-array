@@ -30,48 +30,6 @@ export class ConverterService {
     })
   }
 
-  img2BitmapArray(context, image): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
-      let result = '';
-      // for (var y = 0; y < this.image.height; y++) {
-      //   let next_value = 0
-      //   for (var x = 0; x < this.image.width; x++) {
-
-      //     let n = (y * this.image.width + x) * 4
-      //     let gray = (this.image.data[n] * 4 + this.image.data[n + 1] * 10 + this.image.data[n + 2] * 2) >> 4; // 4位精度
-
-      //     let inverse: boolean;
-      //     if (opts.color) {
-      //       inverse = gray > opts.threshold
-      //     } else {
-      //       inverse = gray < opts.threshold
-      //     }
-      //     if (inverse) {
-      //       this.context.fillStyle = "#000";
-      //       next_value += Math.pow(2, (7 - (x % 8)));
-      //     } else {
-      //       this.context.fillStyle = "#FFF";
-      //     }
-      //     this.context.fillRect(x, y, 1, 1);
-
-      //     // 灰度转网点
-
-      //     if (((x + 1) % 8 == 0 || x == this.image.width - 1) && (x > 0)) {
-      //       if (opts.endian) {
-      //         next_value = this.reverseBit(next_value);
-      //       }
-      //       result += '0x' + ('00' + next_value.toString(16)).substr(-2) + ',';
-      //       next_value = 0;
-      //     }
-      //   }
-      // }
-
-      // result = result.slice(0, result.length - 1) + '};';
-      console.log("转换成功");
-      resolve(result);
-    });
-  }
-
   dither() {
     let newImageData = this.context.createImageData(this.image.width, this.image.height)
     let imageArray = newImageData.data
@@ -139,19 +97,13 @@ export class ConverterService {
 
   getBitmapArray() {
     let result = '';
-    // for (let i = 0; i < this.image.data.length; i += 4) {
-    //   let next_value = 0
-    //   if (this.image.data[i] == 255) {
-    //     next_value += Math.pow(2, (7 - (x % 8)));
-    //   }
-    //   if (this.options.endian) {
-    //     next_value = this.reverseBit(next_value);
-    //   }
-    //   result += '0x' + ('00' + next_value.toString(16)).substr(-2) + ',';
-    // }
     for (var y = 0; y < this.image.height; y++) {
       let next_value = 0
       for (var x = 0; x < this.image.width; x++) {
+        let n = (y * this.image.width + x) * 4
+        let gray = (this.image.data[n] * 4 + this.image.data[n + 1] * 10 + this.image.data[n + 2] * 2) >> 4;
+        if (gray == 255) next_value += Math.pow(2, (7 - (x % 8)));
+
         if (((x + 1) % 8 == 0 || x == this.image.width - 1) && (x > 0)) {
           if (this.options.endian) {
             next_value = this.reverseBit(next_value);
