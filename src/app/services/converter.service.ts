@@ -111,7 +111,7 @@ export class ConverterService {
         }
       }
     }
-    result = result.slice(0, result.length - 1) + '};';
+    result = result.slice(0, result.length - 1);
     return result
   }
 

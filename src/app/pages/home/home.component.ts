@@ -34,12 +34,6 @@ export class HomeComponent implements OnInit {
   fileFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
   @ViewChild("myCanvas") myCanvas;
 
-
-
-  get content() {
-    return this.size + this.result
-  }
-
   constructor(
     private sanitizer: DomSanitizer,
     private converterService: ConverterService,
@@ -72,7 +66,7 @@ export class HomeComponent implements OnInit {
       image.src = window.URL.createObjectURL(this.file);
       image.onload = () => {
         this.size = `// width: ${image.width.toString()}, height: ${image.height.toString()}\n`
-        this.result = `const unsigned char col[] U8X8_PROGMEM= {`;
+        this.result = this.size + `const unsigned char col[] U8X8_PROGMEM = { `;
         this.renderer.setAttribute(canvas, "width", image.width.toString() + 'px')
         this.renderer.setAttribute(canvas, "height", image.height.toString() + 'px')
         context.clearRect(0, 0, this.width, this.height);
@@ -82,7 +76,7 @@ export class HomeComponent implements OnInit {
         this.height = image.height;
 
         this.converterService.convert(context, imageData, this.options).then((result) => {
-          this.result += result;
+          this.result += result + ' };';
         });
       }
     }, 500);
