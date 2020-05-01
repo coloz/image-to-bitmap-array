@@ -9,8 +9,8 @@ http://tools.clz.me/
 
 | 原图                    | 阀值取模                | 抖动取模                |
 | ----------------------- | ----------------------- | ----------------------- |
-| ![](src\assets\b1.png)  | ![](src\assets\b2.png)  | ![](src\assets\b3.png)  |
-| ![](src\assets\lm1.jpg) | ![](src\assets\lm2.png) | ![](src\assets\lm3.png) |
+| ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/b1.png?raw=true)  | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/b2.png?raw=true)  | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/b3.png?raw=true)  |
+| ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/lm1.jpg?raw=true) | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/lm2.png?raw=true) | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/lm3.png?raw=true) |
 
 抖动取模代码来自项目[canvas-floyd-steinberg-dither](https://github.com/tgiachett/canvas-floyd-steinberg-dither)  
 
