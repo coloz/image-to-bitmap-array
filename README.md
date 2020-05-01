@@ -9,8 +9,10 @@ http://tools.clz.me/
 
 | 原图                    | 阀值取模                | 抖动取模                |
 | ----------------------- | ----------------------- | ----------------------- |
+| ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/k1.png?raw=true)  | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/k2.png?raw=true)  | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/k3.png?raw=true)  |
 | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/b1.png?raw=true)  | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/b2.png?raw=true)  | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/b3.png?raw=true)  |
 | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/lm1.png?raw=true) | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/lm2.png?raw=true) | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/lm3.png?raw=true) |
+| ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/qy1.png?raw=true) | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/qy2.png?raw=true) | ![](https://github.com/coloz/image-to-bitmap-array/blob/master/src/assets/qy3.png?raw=true) |
 
 抖动取模代码来自项目[canvas-floyd-steinberg-dither](https://github.com/tgiachett/canvas-floyd-steinberg-dither)  
 
