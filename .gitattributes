@@ -1,2 +1,2 @@
-*.scss linguist-language=TypeScript
-*.html linguist-language=TypeScript
+*.scss linguist-language=typescript
+*.html linguist-language=typescript
