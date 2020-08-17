@@ -2,7 +2,11 @@
 一个纯前端的图片取模程序，可将图片转换为C语言数组形式，用于单片机/arduino显示图片。
 
 ## 演示地址  
-http://tools.clz.me/  
+http://tools.clz.me/image-to-bitmap-array  
+
+## 设备端使用  
+推荐使用 [u8g2](https://github.com/olikraus/u8g2) 配合本软件进行图片显示  
+[基于Arduino的演示](https://www.arduino.cn/thread-42174-1-1.html)  
 
 ## 抖动取模  
 利用 [Floyd-Steinberg-Dither](https://en.wikipedia.org/wiki/Floyd–Steinberg_dithering) 进行取模，可以将灰度转换成点密度。  
@@ -16,9 +20,6 @@ http://tools.clz.me/
 
 抖动取模代码来自项目[canvas-floyd-steinberg-dither](https://github.com/tgiachett/canvas-floyd-steinberg-dither)  
 
-## 在线乞讨  
-觉得不错，就请star一下  
-
 ## 更新  
 2017.2.8  取模软件好多，选择困难症又犯了，为了自救，所以自己做了个  
 2020.4.28  这个小软件意外受欢迎，那我再更新下吧  
@@ -30,6 +31,5 @@ npm i
 ng build --prod
 ```
 
-## 其他  
-推荐使用 [u8g2](https://github.com/olikraus/u8g2) 配合本软件进行图片显示  
-[基于Arduino的演示](https://www.arduino.cn/thread-42174-1-1.html)  
+## 在线乞讨  
+觉得不错，就请star一下  

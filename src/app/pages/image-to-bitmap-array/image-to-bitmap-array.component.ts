@@ -4,11 +4,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { convertOptions } from 'src/app/models/convert.model';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'image-to-bitmap-array',
+  templateUrl: './image-to-bitmap-array.component.html',
+  styleUrls: ['./image-to-bitmap-array.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class ImageToBitmapArrayComponent implements OnInit {
 
   imageData;
   result: string;
