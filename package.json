@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "~9.0.3",
     "@angular/router": "~9.0.3",
     "@ctrl/ngx-codemirror": "^3.0.4",
-    "@worktile/planet": "^1.2.0",
     "codemirror": "^5.53.2",
     "ng-zorro-antd": "^9.1.0",
     "rxjs": "~6.5.4",
