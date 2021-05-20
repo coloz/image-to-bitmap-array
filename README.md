@@ -2,7 +2,7 @@
 一个纯前端的图片取模程序，可将图片转换为C语言数组形式，用于单片机/arduino显示图片。
 
 ## 演示地址  
-http://tools.clz.me/image-to-bitmap-array  
+https://tools.clz.me  
 
 ## 设备端使用  
 推荐使用 [u8g2](https://github.com/olikraus/u8g2) 配合本软件进行图片显示  
