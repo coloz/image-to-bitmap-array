@@ -78,3 +78,12 @@ nz-content {
   background: #fff;
   height: 100%;
 }
+
+.ad-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  img {
+    width: 256px;
+  }
+}

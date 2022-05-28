@@ -7,8 +7,8 @@
         <h1>奈何col的工具箱</h1>
       </a>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu nzOpen nzTitle="Dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/image-to-bitmap-array">图片转bitmap</a>
@@ -28,13 +28,16 @@
         </ul>
       </li>
     </ul>
+    <div class="ad-box" style="width: 256px">
+      <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BANEJK1olXDYCVFlaCEMXBV9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksXBGgIE1sTQl9HCANtdhJNChMJQV93VHh2BhYHUChRXDRUe1cZbQcyUVlbCk8QBmw4K1sSbVBsVF9cCUoWB2sIHGsUbQYFUFxbC0geAWgMHlIlWgYLZFtcAUwUAGcJB1MXXgMDV15ZOHsnAF8PG1IBW3RDBkpbensnA18LKxl7XQILAVlbWh8UA2lfHlMcX1VVBF9dXUsfBjwBS1lCVFEyVl9cDEInMw"
+        target="_blank">
+        <img src="https://www.arduino.cn/images/home/bookad.jpg">
+      </a>
+    </div>
   </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
-        </span>
       </div>
     </nz-header>
     <nz-content>

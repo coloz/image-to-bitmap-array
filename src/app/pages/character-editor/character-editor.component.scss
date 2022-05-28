@@ -1,4 +1,46 @@
-iframe{
-    width: 100%;
+[app-box] {
+    display: flex;
+    align-items: center;
+}
+
+[block-box] {
+    width: 130px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[string-box] {
+    margin-left: 20px;
     height: 100%;
+    textarea {
+        padding: 6px;
+        font-size: 16px;
+        line-height: 27px;
+    }
+}
+
+[text-box]{
+    margin-left: 100px;
+    p{
+        // font-weight: 300;
+        font-size: 14px;
+    }
+}
+
+[ad-box]{
+    margin-top: 50px;
+    p{
+        // font-weight: 300;
+        font-size: 14px;
+    }
+}
+
+[flex-box]{
+    display: flex;
+    align-items: center;
+}
+
+[flex-col]{
+    flex-direction: column;
+    align-items: flex-start;
 }
