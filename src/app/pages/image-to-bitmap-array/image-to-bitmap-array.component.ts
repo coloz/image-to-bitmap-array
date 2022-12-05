@@ -1,7 +1,8 @@
 import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { ConverterService } from '../../services/converter.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { convertOptions } from 'src/app/models/convert.model';
+import { convertOptions } from 'src/app/convert.model';
+import { ConverterService } from 'src/app/converter.service';
+
 
 @Component({
   selector: 'image-to-bitmap-array',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { convertOptions } from '../models/convert.model';
+import { convertOptions } from './convert.model';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +55,7 @@ export class ConverterService {
     this.image = newImageData;
   }
 
-  findClosestPalCol(srcPx) {
+  findClosestPalCol(srcPx:any) {
     if (256 - srcPx < 256 / 2) {
       return 255;
     } else {
@@ -115,7 +115,7 @@ export class ConverterService {
     return result
   }
 
-  reverseBit(data) {
+  reverseBit(data:any) {
     let res = 0;
     for (var x = 0; x < 8; x++) {
       res = res << 1

@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
-// @import '~bootstrap/scss/bootstrap';
-@import "~codemirror/lib/codemirror";
+@import '~codemirror/lib/codemirror';
 @import "~codemirror/theme/3024-day";
 
 .CodeMirror {

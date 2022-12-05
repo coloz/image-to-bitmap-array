@@ -25,6 +25,13 @@ export class CharacterEditorComponent implements OnInit {
     return `${this.width * 26}px`
   }
 
+  codemirrorOptions = {
+    lineNumbers: true,
+    theme: '3024-day',
+    mode: 'clike',
+    lineWrapping: true
+  }
+
   ngOnInit(): void {
     this.ngModelChange()
   }

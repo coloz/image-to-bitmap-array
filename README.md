@@ -2,7 +2,8 @@
 一个纯前端的图片取模程序，可将图片转换为C语言数组形式，用于单片机/arduino显示图片。
 
 ## 演示地址  
-https://tools.clz.me  
+[1602/2004 LCD 在线字符编辑器](https://arduino.me/a/1602-character-editor)  
+[OLED/LCD/12864 在线图片取模工具](https://arduino.me/a/image-to-bitmap-array)  
 
 ## 设备端使用  
 推荐使用 [u8g2](https://github.com/olikraus/u8g2) 配合本软件进行图片显示  

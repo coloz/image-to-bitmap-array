@@ -1,35 +1,55 @@
 .img-box {
-    width: 500px;
-    height: 300px;
+    width: 100%;
+    height: 200px;
     margin-top: 15px;
     display: flex;
-    align-items: center;
-    img {
-        max-height: 300px;
+    justify-content: center;
+
+    .image {
+        opacity: 0.3;
     }
+
+    img {
+        max-height: 200px;
+        max-width: 200px;
+    }
+
     canvas {
-        max-height: 300px;
+        max-height: 200px;
+        max-width: 200px;
     }
 }
 
+.input-box {
+    text-align: center;
+}
+
 .code-box {
-    width: 600px;
+    width: 100%;
 }
 
 .padding-left {
     padding-left: 30px;
 }
 
+.setting-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    >div {
+        margin-right: 15px;
+
+        .label {
+            margin-right: 6px;
+        }
+    }
+}
+
 .switch-box {
     display: flex;
     align-items: center;
     margin-top: 15px;
-    .label {
-        width: 80px;
-    }
-    nz-switch {
-        margin-left: 15px;
-    }
 }
 
 .slider-box {
@@ -37,15 +57,8 @@
     align-items: center;
     margin-top: 15px;
     width: 300px;
-    .label {
-        width: 80px;
-    }
-    nz-slider{
+
+    nz-slider {
         flex-grow: 1;
     }
 }
-
-.min-col{
-    min-width: 350px;
-}
-

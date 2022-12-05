@@ -1,40 +1,23 @@
-<div flex-box flex-col>
-    <div flex-box>
-      <div>
-        <div>
-          宽
-          <input [(ngModel)]="width" (ngModelChange)="ngModelChange()" [min]="1" [max]="8" type="number">
-        </div>
-        <div>
-          高
-          <input [(ngModel)]="height" (ngModelChange)="ngModelChange()" [min]="1" [max]="8" type="number">
-        </div>
-        <div flex-box>
-          <div block-box [ngStyle]="{'width': widthpx}">
-            <ng-container *ngFor="let item of items">
-              <block [isSelected]="item.isSelected" (click)="selectBlock(item)"></block>
-            </ng-container>
-          </div>
-  
-          <div string-box>
-            <textarea [(ngModel)]="charStr" cols="20" rows="10"></textarea>
-          </div>
-        </div>
-      </div>
-      <div text-box>
-        <div>
-          <p>这是一个完全开源的纯前端字符编辑程序</p>
-          <p>可配合Arduino自带的LiquidCrystal库使用</p>
-          <p>使用方法见<a
-              href="https://github.com/arduino-libraries/LiquidCrystal/blob/master/examples/CustomCharacter/CustomCharacter.ino"
-              target="_blank">Custom
-              Characters例程</a></p>
-          <p>遇到问题可以在<a href="http://www.arduino.cn/" target="_blank">Arduino中文社区</a>提问
-          </p>
-          <p>本项目源码可见<a href="https://github.com/coloz/character-editor" target="_blank">github</a>
-          </p>
-          <p>觉得有用的话，可以打个星星支持下</p>
-        </div>
-      </div>
-    </div>
+<div class="size-box">
+  <div>
+    宽
+    <nz-input-number [(ngModel)]="width" (ngModelChange)="ngModelChange()" [nzMin]="1" [nzMax]="8" [nzStep]="1">
+    </nz-input-number>
   </div>
+  <div>
+    高
+    <nz-input-number [(ngModel)]="height" (ngModelChange)="ngModelChange()" [nzMin]="1" [nzMax]="8" [nzStep]="1">
+    </nz-input-number>
+  </div>
+</div>
+<div class="mid-box">
+  <div block-box [ngStyle]="{'width': widthpx}">
+    <ng-container *ngFor="let item of items">
+      <block [isSelected]="item.isSelected" (click)="selectBlock(item)"></block>
+    </ng-container>
+  </div>
+</div>
+
+<div string-box>
+  <ngx-codemirror [ngModel]="charStr" [options]="codemirrorOptions"></ngx-codemirror>
+</div>

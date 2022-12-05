@@ -1,3 +1,0 @@
-*.scss linguist-language=typescript
-*.html linguist-language=typescript
-*.less linguist-language=typescript
